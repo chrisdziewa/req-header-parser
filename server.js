@@ -1,18 +1,23 @@
 'use strict';
 const express = require('express');
 const app = express();
-let port= process.env.PORT || 3000;
+const getIp = require('./helpers/get-ip');
+const getSys = require('./helpers/get-system');
+
+let port = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
   res.send('hello world!');
 });
 
 app.get('/api/whoami/', (req, res) => {
-  let header = req.headers;
-  let userAgent = header['user-agent'].match(/\([\w\s\;]+\)/)[0];
-  userAgent = userAgent.substring(1, userAgent.length - 1);
-  console.log(req.headers);
-  res.send(req.connection.remoteAddress);
+  var message = {};
+  getIp()
+    .then( (ip) => {
+      message.ip = ip;
+      message.software = getSys(req);
+      res.json(message);    
+    });
 });
 
 app.listen(port, () => {
