@@ -1,0 +1,22 @@
+{
+  "name": "req-header-parser",
+  "version": "1.0.0",
+  "description": "A Microservice that returns parsed header information for the current user.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chrisdziewa/req-header-parser.git"
+  },
+  "author": "Chris Dziewa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chrisdziewa/req-header-parser/issues"
+  },
+  "homepage": "https://github.com/chrisdziewa/req-header-parser",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
