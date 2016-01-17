@@ -1,7 +1,7 @@
 'use strict';
 const express = require('express');
 const app = express();
-let port= process.env.NODE_ENV || 3000;
+let port= process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
   res.send('hello world!');
