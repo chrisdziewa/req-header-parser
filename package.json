@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/chrisdziewa/req-header-parser",
   "dependencies": {
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "request-ip": "^1.1.4"
   }
 }
