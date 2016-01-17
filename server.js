@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api/whoami/', (req, res) => {
-
+  console.log(req.headers);
   var message = {};
   getIp()
     .then( (ip) => {
