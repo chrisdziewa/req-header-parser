@@ -1,7 +1,8 @@
 'use strict';
+const uaParser = require('ua-parser');
+
 
 module.exports = function(req) {
-  let header = req.headers;
-  let userAgent = header['user-agent'].match(/\([\w\s\;]+\)/)[0];
-  return userAgent.substring(1, userAgent.length - 1);
+  var info = uaParser.parse(req.headers['user-agent']);
+  return info.os.toString();
 };

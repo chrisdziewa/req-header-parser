@@ -4,7 +4,6 @@ const app = express();
 const getIp = require('./helpers/get-ip');
 const getSys = require('./helpers/get-system');
 const getLang = require('./helpers/get-language');
-
 let port = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
@@ -12,7 +11,6 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api/whoami/', (req, res) => {
-  console.log(req.headers);
   var message = {};
   getIp()
     .then( (ip) => {
